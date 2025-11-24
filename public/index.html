@@ -15,25 +15,24 @@
             <li id="navAbout">The Archive Project</li>
         </ul>
     </div>
+
 <!--page 1-->
 <div class="page1">
     <!--title-->
     <h1>A Note From Questioning Queer Users</h1>
     <h4>How has your queer identity changed over time? Share your story!</h4>
+    <h3>Write a Note:</h3>
+    <form>
+        <input type="text" name="username" id="username" placeholder="Name">
+        <br>
+        <input type="text" name="textfield" id="textfield" placeholder="*Type your comment...">
+        <br>
+        <input type="submit" id="submit" value="Submit">
+    </form>
     <div class="notes">
-        <h3>Write a Note:</h3>
-        <form>
-            <input type="text" name="username" id="username" placeholder="Name">
-            <br>
-            <input type="text" name="textfield" id="textfield" placeholder="*Type your comment...">
-            <br>
-            <input type="submit" id="submit" value="Submit">
-        </form>
-        <div id="notesGrid" class="notes-grid"></div>
+      <div id="notesGrid" class="notes-grid"></div>
     </div>
 </div>
-
-<hr>
 
 <!--page 2-->
 <div class="page2 hidden">
@@ -44,7 +43,7 @@
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-    import { initializeFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+    import { initializeFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
     const firebaseConfig = {
         apiKey: "AIzaSyCP4thIMR3Gso6iSowI7fzKg5zdgQPDPHk",
@@ -117,7 +116,7 @@
             username: username,
             textfield: textfield,
             color: randomColor,
-            created: Date.now()
+            created: serverTimestamp()
         });
 
         username_input.value = "";
