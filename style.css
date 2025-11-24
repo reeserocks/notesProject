@@ -6,6 +6,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
 .page1, .page2 {
@@ -51,6 +52,12 @@ li {
     display: inline;
     margin-right: 2rem;
     cursor: pointer;
+}
+
+/* INPUT */
+#textfield {
+    height: 100px;
+    width: 90%;
 }
 
 
