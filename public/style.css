@@ -187,6 +187,7 @@ textarea {
 .contentCard {
   display: inline-block;
   max-width: 100%;
+  break-inside: avoid;
   overflow-wrap: break-word;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -267,5 +268,18 @@ footer {
   }
   .page1, .page2 {
     width: 95%;
+  }
+  .archiveContent {
+    grid-template-columns: 100%;
+  }
+  .contentCard {
+    max-width: 90%;
+  }
+  .nav ul {
+    padding-left: 0.7rem;
+  }
+  .nav li {
+    font-size: 0.7rem;
+    padding: 0;
   }
 }
